@@ -59,35 +59,35 @@ export const Calendar  = (props) => {
 
 
   return (
-    <div class="ui-datepicker">
-      <div class="ui-datepicker-material-header">
-        <div class="ui-datepicker-material-day">{myDate.day[now.getDay()]}</div>
-        <div class="ui-datepicker-material-date">
-          <div class="ui-datepicker-material-day-num">{now.getDate()}</div>
-          <div class="ui-datepicker-material-month">
+    <div className="ui-datepicker">
+      <div className="ui-datepicker-material-header">
+        <div className="ui-datepicker-material-day">{myDate.day[now.getDay()]}</div>
+        <div className="ui-datepicker-material-date">
+          <div className="ui-datepicker-material-day-num">{now.getDate()}</div>
+          <div className="ui-datepicker-material-month">
             {myDate.month[now.getMonth()]}
           </div>
-          <div class="ui-datepicker-material-year">{now.getFullYear()}</div>
+          <div className="ui-datepicker-material-year">{now.getFullYear()}</div>
         </div>
       </div>
-      <div class="ui-datepicker-header">
-        <div class="ui-datepicker-title">
-          <span class="ui-datepicker-month">
+      <div className="ui-datepicker-header">
+        <div className="ui-datepicker-title">
+          <span className="ui-datepicker-month">
             {myDate.month[now.getMonth()]}
           </span>
           &nbsp;
-          <span class="ui-datepicker-year">{now.getFullYear()}</span>
+          <span className="ui-datepicker-year">{now.getFullYear()}</span>
         </div>
       </div>
-      <table class="ui-datepicker-calendar">
+      <table className="ui-datepicker-calendar">
         <colgroup>
           <col />
           <col />
           <col />
           <col />
           <col />
-          <col class="ui-datepicker-week-end" />
-          <col class="ui-datepicker-week-end" />
+          <col className="ui-datepicker-week-end" />
+          <col className="ui-datepicker-week-end" />
         </colgroup>
         <thead>
           <tr>
