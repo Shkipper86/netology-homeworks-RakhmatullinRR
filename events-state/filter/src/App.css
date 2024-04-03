@@ -1,0 +1,28 @@
+.main-container {
+  position: absolute;
+  width: 70%;
+  left: 15%;
+}
+
+.filters {
+  display: flex;
+  gap: 2px;
+  padding-bottom: 20px;
+}
+
+.filters-item {
+  height: 20px;
+  border: 1px solid #000;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.filters-item.active {
+  background-color: #555555;
+}
+
+.project-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px
+}
