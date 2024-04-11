@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Edit from '../assets/img/edit.svg'
 import Delete from '../assets/img/delete.svg'
 
@@ -54,7 +54,6 @@ export const Steps = () => {
         stepItem.log?.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime())
          
     setStepItem({...stepItem, date: '', passed: 0, log: stepItem.log})    
-    // sortLogItems()
   }; 
 
   const handleOnchange = (e: React.ChangeEvent<HTMLInputElement>) => {
