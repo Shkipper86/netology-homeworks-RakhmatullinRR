@@ -1,0 +1,36 @@
+.container {
+    display: grid;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    gap: 12px;
+  }
+
+.result-container {
+height: 150px;
+border: 2px solid #000;
+margin-top: 32px;
+padding: 0 8px;
+overflow: auto;
+}
+
+.result-log-item {
+  display: grid;
+  grid-template-columns: 3fr 2fr 1fr;
+  width: 100%;
+}
+
+.userInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+button {
+  height: 50%;
+  align-self: end;
+}
