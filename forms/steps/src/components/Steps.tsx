@@ -73,11 +73,6 @@ export const Steps = () => {
     setStepItem({...stepItem, date: stepItem.log![index].date, passed: editPassetValue, log: stepItem.log})
   }
 
-  const sortLogItems = () => {
-    stepItem.log?.sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-    setStepItem(stepItem)
-  }
-
  const stepItemLogTable = stepItem.log?.map((item, index) => {
   return (
     <div className="result-log-item" key={item.id}>
