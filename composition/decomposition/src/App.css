@@ -1,0 +1,100 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-auto-flow: column;
+    gap: 32px;
+}
+
+.news-headers {
+    display: flex;
+    gap: 8px;
+}
+
+.news-items {
+    display: flex;
+    gap: 8px;
+}
+
+.datetime {
+    font-size: medium;
+    color: #a4a4a4;
+}
+
+.currency {
+    display: flex;
+    gap: 32px
+}
+
+.currency-item {
+    display: flex;
+    gap: 8px;
+}
+
+.search-titles {
+    display: flex;
+    gap: 32px;
+}
+
+.searchInput input {
+    width: 530px;
+    margin-top: 16px;
+}
+
+.search-example {
+    color: #a4a4a4;
+}
+
+.poster {
+    padding-top: 16px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footer-item-title {
+    display: flex;
+    color: #0f5fc1;
+    font-size: large;
+    align-items: center;
+     padding-bottom: 8px;
+}
+
+.weather-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.now-degrees {
+    font-size: x-large;
+}
+
+.visited-content a,
+.tv-program-content a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.visited-item-label,
+.visited-item-title {
+    padding-right: 8px;
+}
+
+.visited-item-channel {
+    color: #a4a4a4;
+}
