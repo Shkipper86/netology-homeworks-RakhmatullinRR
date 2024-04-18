@@ -1,0 +1,29 @@
+.user-input-container {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    width: fit-content;
+}
+
+.user-input-container div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.watch-items-container {
+    display: flex;
+    gap: 32px;
+    padding-top: 24px;
+}
+
+.watch-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: max-content;
+}
