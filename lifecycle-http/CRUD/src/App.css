@@ -1,0 +1,19 @@
+button {
+    margin-left: 12px;
+    height: fit-content;
+    align-self: center;
+}
+
+.update {
+    display: flex;
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.add-note {
+    padding-top: 60px;
+}
