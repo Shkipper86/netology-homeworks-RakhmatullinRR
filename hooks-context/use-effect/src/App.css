@@ -1,0 +1,61 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+}
+
+.user-table,
+.userdetails-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.userlist-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px #000 solid;
+  cursor: pointer;
+}
+
+.userlist-item:hover {
+  background-color: rgb(194, 246, 253);
+}
+
+.userlist-item.active {
+  background-color: #0f7ffa;
+}
+
+.userdetails {
+  display: flex;
+  align-items: center;
+  border: 1px #000 solid;
+}
+
+.userdetails-container span {
+  display: flex;
+  align-items: center;
+  border: 1px #000 solid;
+  height: 50px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: #FF3D00 transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
