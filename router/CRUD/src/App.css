@@ -1,0 +1,89 @@
+#root {
+    display: grid;
+    background-color: #e8eaed;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 1000px;
+    justify-self: center;
+    margin: 16px;
+}
+
+.create-block {
+    background-color: #fff;
+}
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+button {
+    width: fit-content;
+    padding: 4px 16px;
+    margin: 16px;
+    background-color: #4469ae;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #ff0000;
+}
+
+.post-card {
+    display: flex;
+    flex-direction: column;    
+    background-color: #fff;
+    width: 100%;
+}
+
+.userInfo {
+    display: flex;
+    gap: 16px;
+}
+
+.user-name {
+    font-size: 21px;
+    color: #000;
+}
+
+.post-created {
+    color: #60696f;
+}
+
+.post {
+    font-size: 40px;
+    width: 100%;
+    padding: 24px 40px;
+    color: #000;
+}
+
+.new-post {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 1000px;
+    justify-self: center;
+    margin: 16px;
+    background-color: #fff;
+}
+
+.new-post__input {
+    padding: 32px;
+    margin: 16px;
+}
+
+.new-post button,
+.new-post a {
+    align-self: end;
+}
