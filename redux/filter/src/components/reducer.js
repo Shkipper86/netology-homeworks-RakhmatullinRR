@@ -84,7 +84,10 @@ export default function reducer (state = initialState, action) {
       case actions.CANCEL:
         return {
             ...state,
-            edit: false,
+            elementStatus: {
+              edit: false,
+              elementId: -1
+            },
             inputs: {title: '', price: 0}
         }
       case actions.ITEM_DELETE:
