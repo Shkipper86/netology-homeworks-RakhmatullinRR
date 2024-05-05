@@ -1,19 +1,12 @@
 import { useDispatch, useSelector } from "react-redux"
 import * as actions from "./actions";
+import { UserControls } from "./UserControls";
 
 export const Editiing = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
+  const { list } = useSelector((state) => state.lists);
 
-  const submitHandler = (e) => {
-    e.preventDefault()
-
-    state.edit == true
-    ? dispatch(actions.saveItem())
-    : dispatch(actions.addItem())    
-  }
-
-  const workList = state.list.map((work, index) => {
+  const workList = list.map((work, index) => {
     return (
       <li key={index}>
         {work.title} {work.price}
@@ -51,33 +44,7 @@ export const Editiing = () => {
 
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <input
-          type="text"
-          name="work-title"
-          value={state.inputs.title}
-          onChange={(e) => {
-            dispatch(actions.changeTitle(e.target.value));
-          }}
-        />
-        <input
-          type="number"
-          name="work-price"
-          value={state.inputs.price}
-          min={0}
-          onChange={(e) => {
-            dispatch(actions.changePrice(e.target.value));
-          }}
-        />
-        <button type="submit" disabled={state.inputs.title === ""}>
-          {state.edit ? "Save" : "Add"}
-        </button>
-        {state.edit && (
-          <button type="button" onClick={() => dispatch(actions.cancel())}>
-            Cancel
-          </button>
-        )}
-      </form>
+      <UserControls />
       <div className="list">
         <ul>{workList}</ul>
       </div>

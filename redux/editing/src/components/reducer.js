@@ -2,12 +2,16 @@ import * as actions from './actionTypes'
 
 const initialState = {
     inputs: {
-        title: 'test',
-        price: 9
+        title: '',
+        price: 0
     },
-    list: [],
-    edit: false,
-    elementId: -1
+    lists: {
+      list: [],
+    },
+    elementStatus: {
+      edit: false,
+      elementId: -1,
+    }
 }
 
 export default function reducer (state = initialState, action) {
@@ -25,53 +29,69 @@ export default function reducer (state = initialState, action) {
           inputs: { ...state.inputs, price: newPrice },
         };
       case actions.ITEM_ADD:
-        const listArr = state.list;
+        const listArr = state.lists.list;
         listArr.push({
           title: state.inputs.title,
           price: state.inputs.price,
-          id: state.list.length,
+          id: state.lists.list.length,
         });
         return {
           ...state,
           inputs: { title: "", price: 0 },
-          list: listArr,
+          lists: {
+            list: listArr,
+          },
           edit: false,
         };
       case actions.ITEM_EDIT:
-          const index = state.list.findIndex((item) => item.id == action.payload);
+          const index = state.lists.list.findIndex((item) => item.id == action.payload);
           const inputs = {
-              title: state.list[index].title,
-              price: state.list[index].price,
+              title: state.lists.list[index].title,
+              price: state.lists.list[index].price,
             }
         return {
-            ...state,
+          ...state,
+          elementStatus: {
+            elementId: action.payload,
             edit: true,
-            inputs: inputs,
-            elementId: action.payload
-          };
+          },
+          inputs: inputs,
+        };
       case actions.ITEM_SAVE:
-        state.list[state.elementId].title = state.inputs.title
-        state.list[state.elementId].price = state.inputs.price
+        state.lists.list[state.elementStatus.elementId].title = state.inputs.title
+        state.lists.list[state.elementStatus.elementId].price = state.inputs.price
         return {
             ...state,
-            list: state.list,
-            edit: false,
-            elementId: -1
+            lists: {
+              list: state.lists.list,
+            },
+            inputs: {title: '', price: 0},
+            elementStatus: {
+              edit: false,
+              elementId: -1
+            }            
         }
       case actions.CANCEL:
         return {
             ...state,
-            edit: false,
+            elementStatus: {
+              edit: false,
+              elementId: -1
+            },
             inputs: {title: '', price: 0}
         }
       case actions.ITEM_DELETE:
-        const deletedIndex = state.list.findIndex((item) => item.id == action.payload);
-        state.list.splice(deletedIndex, 1)
+        const deletedIndex = state.lists.list.findIndex((item) => item.id == action.payload);
+        state.lists.list.splice(deletedIndex, 1)
         return {
             ...state,
-            edit: false,
-            elementId: -1,
-            list: state.list,
+            elementStatus: {
+              edit: false,
+              elementId: -1
+            } ,
+            lists: {
+              list: state.lists.list,
+            },
             inputs: {title: '', price: 0}
         }
       default:
